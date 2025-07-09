@@ -7,7 +7,9 @@ A demonstration using [Nuxt](https://nuxt.com) with server-side rendering on the
 ## Features
 
 - [Server-Side Rendering on the Edge](https://nuxt.com/blog/nuxt-on-the-edge)
-- Authentication backed-in using [nuxt-auth-utils](https://github.com/atinux/nuxt-auth-utils)
+- **Dual Authentication System**: 
+  - GitHub OAuth authentication using [nuxt-auth-utils](https://github.com/atinux/nuxt-auth-utils)
+  - Username/Password authentication with secure password hashing
 - Leverage [Cloudflare D1](https://developers.cloudflare.com/d1/) as database with [drizzle ORM](https://orm.drizzle.team/) using [`hubDatabase()`](https://hub.nuxt.com/docs/storage/database)
 - [Automatic database migrations](https://hub.nuxt.com/docs/features/database#database-migrations) in development & when deploying
 - User interface made with [Nuxt UI](https://ui.nuxt.com)
@@ -30,6 +32,11 @@ Make sure to install the dependencies using [pnpm](https://pnpm.io/):
 pnpm i
 ```
 
+### Authentication Setup
+
+This project supports two authentication methods:
+
+#### 1. GitHub OAuth (Optional)
 Create a [GitHub Oauth Application](https://github.com/settings/applications/new) with:
 - Homepage url: `http://localhost:3000`
 - Callback url: `http://localhost:3000/api/auth/github`
@@ -40,6 +47,11 @@ Add the variables in the `.env` file:
 NUXT_OAUTH_GITHUB_CLIENT_ID="my-github-oauth-app-id"
 NUXT_OAUTH_GITHUB_CLIENT_SECRET="my-github-oauth-app-secret"
 ```
+
+#### 2. Username/Password Authentication
+No additional setup required - users can register with a username and password directly on the `/auth` page.
+
+### Session Configuration
 
 To create sealed sessions, you also need to add `NUXT_SESSION_PASSWORD` in the `.env` with at least 32 characters:
 

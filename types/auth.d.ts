@@ -1,7 +1,10 @@
 declare module '#auth-utils' {
   interface User {
     id: number
-    login: string
+    username: string
+    name: string
+    email?: string
+    login?: string // For GitHub compatibility
   }
 }
-export {}
+export { }
