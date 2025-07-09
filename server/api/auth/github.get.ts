@@ -15,7 +15,8 @@ export default defineOAuthGitHubEventHandler({
         createdAt: new Date(),
         lastLoginAt: new Date()
       }).returning().get()
-    } else {
+    }
+    else {
       // Update last login
       await useDB().update(tables.users)
         .set({ lastLoginAt: new Date() })

@@ -5,7 +5,7 @@
     "build": "nuxi build",
     "preview": "npx nuxthub preview",
     "db:generate": "drizzle-kit generate",
-    "lint": "eslint .",
+    "lint": "eslint . --quiet",
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
