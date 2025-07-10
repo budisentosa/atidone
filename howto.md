@@ -3,3 +3,6 @@ deploy =
 
 
     npx nuxthub deploy --preview
+
+
+test push dev
